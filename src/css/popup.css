@@ -1,0 +1,227 @@
+/* 重置样式 */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+ul,
+li {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* 样式开始 */
+
+.wrap {
+    width: 300px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: 0 -50%;
+    background-size: contain;
+    background-color: rgba(135, 206, 235, 0.2);
+    /* transition: background-position 50s ease-out; */
+}
+
+.active-render {
+    /* background-position: -200px -50%; */
+    animation: bg-move ease-out 50s alternate infinite;
+}
+
+@keyframes bg-move {
+    0% {
+        background-position: 0 -50%;
+    }
+    50% {
+        background-position: -200px -50%;
+    }
+    75% {
+        background-position: 0 -50%;
+    }
+    100% {
+        background-position: 200px -50%;
+    }
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.content {
+    width: 100%;
+    height: 350px;
+}
+
+/* 头部样式 */
+
+.location {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 30px;
+    padding-left: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* 天气显示区域样式 */
+
+/* 今天的天体 */
+
+.now-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 128px;
+    border-bottom: 2px solid #eee;
+}
+
+.city-weather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40px;
+}
+
+.city-weather .city,
+.city-weather .weather,
+.tem {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.city-weather .city {
+    height: 28px;
+    letter-spacing: 4px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.city-weather .weather {
+    height: 16px;
+    margin-top: 4px;
+    text-align: center;
+    line-height: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tem {
+    height: 40px;
+    margin-top: 10px;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.tips {
+    margin-top: 6px;
+    height: 20px;
+}
+
+/* 接下来几个小时的预测和未来几天的预测 */
+
+.weather-show {
+    width: 100%;
+    height: 220px;
+}
+
+.hourly-wrap {
+    width: 100%;
+    height: 88px;
+    border-bottom: 2px solid #eee;
+    background-color: rgba(238, 238, 238, 0.3);
+}
+
+.hourly-wrap .now-day-forecast {
+    width: 90%;
+    height: 88px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.hourly-wrap .now-day-forecast .hourly-item {
+    height: 88px;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-size: 16px;
+    color: skyblue;
+}
+
+.hourly-wrap .now-day-forecast .hourly-item .hourly-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.days-forecast {
+    height: 120px;
+}
+
+.forecast-item {
+    width: 80%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 5px 0;
+    border-bottom: 2px solid skyblue;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 28px;
+    font-size: 18px;
+}
+
+.forecast-item .title {
+    font-weight: 800;
+    color: skyblue;
+}
+
+/* .forecast-item .forecast-weather {
+    color: skyblue;
+} */
+
+.forecast-item .forecast-tem {
+    padding-right: 8px;
+    font-weight: 800;
+    color: skyblue;
+}
+
+.forecast-item .forecast-weather {
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+
+.forecast-item:last-of-type {
+    border: none;
+}
